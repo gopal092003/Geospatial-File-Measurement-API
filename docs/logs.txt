@@ -1,0 +1,371 @@
+Geospatial File Measurement API
+Development and Verification Logs
+=================================
+
+This file contains the original Command Prompt logs captured during
+environment setup, dependency installation, debugging, automated testing,
+application startup, and manual API verification.
+
+The logs are preserved in their original form.
+
+===================================================================================
+
+C:\Users\gopal\Geospatial-File-Measurement-API>python venv .venv
+python: can't open file 'C:\\Users\\gopal\\Geospatial-File-Measurement-API\\venv': [Errno 2] No such file or directory
+
+C:\Users\gopal\Geospatial-File-Measurement-API>python -m venv .venv
+
+C:\Users\gopal\Geospatial-File-Measurement-API>
+C:\Users\gopal\Geospatial-File-Measurement-API>.venv\Scripts\Activate.ps1
+
+C:\Users\gopal\Geospatial-File-Measurement-API>.venv\Scripts\Activate
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>pip install -r requirements.txt
+Collecting fastapi (from -r requirements.txt (line 1))
+  Using cached fastapi-0.142.2-py3-none-any.whl.metadata (27 kB)
+Collecting geopandas (from -r requirements.txt (line 3))
+  Downloading geopandas-1.2.0-py3-none-any.whl.metadata (2.0 kB)
+Collecting shapely (from -r requirements.txt (line 4))
+  Downloading shapely-2.2.0-cp312-cp312-win_amd64.whl.metadata (6.8 kB)
+Collecting pyproj (from -r requirements.txt (line 5))
+  Downloading pyproj-3.8.0-cp312-cp312-win_amd64.whl.metadata (40 kB)
+Collecting python-multipart (from -r requirements.txt (line 6))
+  Using cached python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+Collecting pytest (from -r requirements.txt (line 7))
+  Using cached pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting httpx (from -r requirements.txt (line 8))
+  Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting uvicorn[standard] (from -r requirements.txt (line 2))
+  Using cached uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting starlette>=0.46.0 (from fastapi->-r requirements.txt (line 1))
+  Using cached starlette-1.7.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting pydantic>=2.9.0 (from fastapi->-r requirements.txt (line 1))
+  Using cached pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi->-r requirements.txt (line 1))
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi->-r requirements.txt (line 1))
+  Using cached typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi->-r requirements.txt (line 1))
+  Using cached annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+Collecting opentelemetry-api>=1.44.0 (from fastapi->-r requirements.txt (line 1))
+  Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)
+Collecting click>=7.0 (from uvicorn[standard]->-r requirements.txt (line 2))
+  Using cached click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn[standard]->-r requirements.txt (line 2))
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting httptools>=0.8.0 (from uvicorn[standard]->-r requirements.txt (line 2))
+  Using cached httptools-0.8.0-cp312-cp312-win_amd64.whl.metadata (3.7 kB)
+Collecting python-dotenv>=0.13 (from uvicorn[standard]->-r requirements.txt (line 2))
+  Using cached python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+Collecting pyyaml>=5.1 (from uvicorn[standard]->-r requirements.txt (line 2))
+  Using cached pyyaml-6.0.3-cp312-cp312-win_amd64.whl.metadata (2.4 kB)
+Collecting watchfiles>=0.20 (from uvicorn[standard]->-r requirements.txt (line 2))
+  Using cached watchfiles-1.3.0-cp310-abi3-win_amd64.whl.metadata (5.0 kB)
+Collecting websockets>=13.0 (from uvicorn[standard]->-r requirements.txt (line 2))
+  Using cached websockets-17.2-cp312-cp312-win_amd64.whl.metadata (6.5 kB)
+Collecting numpy>=2 (from geopandas->-r requirements.txt (line 3))
+  Using cached numpy-2.5.3-cp312-cp312-win_amd64.whl.metadata (6.6 kB)
+Collecting packaging (from geopandas->-r requirements.txt (line 3))
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pandas>=2.2.0 (from geopandas->-r requirements.txt (line 3))
+  Downloading pandas-3.0.6-cp312-cp312-win_amd64.whl.metadata (19 kB)
+Collecting pyogrio>=0.8 (from geopandas->-r requirements.txt (line 3))
+  Downloading pyogrio-0.13.0-cp311-abi3-win_amd64.whl.metadata (6.0 kB)
+Collecting certifi (from pyproj->-r requirements.txt (line 5))
+  Using cached certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting colorama>=0.4 (from pytest->-r requirements.txt (line 7))
+  Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting iniconfig>=1.0.1 (from pytest->-r requirements.txt (line 7))
+  Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting pluggy<2,>=1.5 (from pytest->-r requirements.txt (line 7))
+  Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting pygments>=2.7.2 (from pytest->-r requirements.txt (line 7))
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting anyio (from httpx->-r requirements.txt (line 8))
+  Using cached anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting httpcore==1.* (from httpx->-r requirements.txt (line 8))
+  Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting idna (from httpx->-r requirements.txt (line 8))
+  Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting python-dateutil>=2.8.2 (from pandas>=2.2.0->geopandas->-r requirements.txt (line 3))
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting tzdata (from pandas>=2.2.0->geopandas->-r requirements.txt (line 3))
+  Downloading tzdata-2026.5-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi->-r requirements.txt (line 1))
+  Using cached annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.5 (from pydantic>=2.9.0->fastapi->-r requirements.txt (line 1))
+  Using cached pydantic_core-2.46.5-cp312-cp312-win_amd64.whl.metadata (6.7 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas>=2.2.0->geopandas->-r requirements.txt (line 3))
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Using cached fastapi-0.142.2-py3-none-any.whl (144 kB)
+Downloading geopandas-1.2.0-py3-none-any.whl (368 kB)
+Downloading shapely-2.2.0-cp312-cp312-win_amd64.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 8.2 MB/s eta 0:00:00
+Downloading pyproj-3.8.0-cp312-cp312-win_amd64.whl (6.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.7/6.7 MB 5.5 MB/s eta 0:00:00
+Using cached python_multipart-0.0.32-py3-none-any.whl (30 kB)
+Using cached pytest-9.1.1-py3-none-any.whl (386 kB)
+Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Using cached annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+Using cached click-8.5.0-py3-none-any.whl (125 kB)
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Using cached httptools-0.8.0-cp312-cp312-win_amd64.whl (90 kB)
+Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Using cached numpy-2.5.3-cp312-cp312-win_amd64.whl (12.6 MB)
+Downloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pandas-3.0.6-cp312-cp312-win_amd64.whl (9.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 1.8 MB/s eta 0:00:00
+Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+Using cached pydantic-2.13.5-py3-none-any.whl (472 kB)
+Using cached pydantic_core-2.46.5-cp312-cp312-win_amd64.whl (2.0 MB)
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 2.1 MB/s eta 0:00:00
+Downloading pyogrio-0.13.0-cp311-abi3-win_amd64.whl (23.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.8/23.8 MB 3.6 MB/s eta 0:00:00
+Using cached python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+Using cached pyyaml-6.0.3-cp312-cp312-win_amd64.whl (154 kB)
+Using cached starlette-1.7.0-py3-none-any.whl (78 kB)
+Using cached anyio-4.15.1-py3-none-any.whl (132 kB)
+Using cached idna-3.20-py3-none-any.whl (69 kB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Using cached watchfiles-1.3.0-cp310-abi3-win_amd64.whl (290 kB)
+Using cached websockets-17.2-cp312-cp312-win_amd64.whl (218 kB)
+Using cached certifi-2026.7.22-py3-none-any.whl (136 kB)
+Using cached uvicorn-0.54.0-py3-none-any.whl (87 kB)
+Using cached annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading tzdata-2026.5-py2.py3-none-any.whl (347 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: websockets, tzdata, typing-extensions, six, pyyaml, python-multipart, python-dotenv, pygments, pluggy, packaging, numpy, iniconfig, idna, httptools, h11, colorama, click, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, shapely, python-dateutil, pytest, pyproj, pyogrio, pydantic-core, opentelemetry-api, httpcore, anyio, watchfiles, starlette, pydantic, pandas, httpx, geopandas, fastapi
+Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 certifi-2026.7.22 click-8.5.0 colorama-0.4.6 fastapi-0.142.2 geopandas-1.2.0 h11-0.16.0 httpcore-1.0.9 httptools-0.8.0 httpx-0.28.1 idna-3.20 iniconfig-2.3.1 numpy-2.5.3 opentelemetry-api-1.45.1 packaging-26.3 pandas-3.0.6 pluggy-1.6.0 pydantic-2.13.5 pydantic-core-2.46.5 pygments-2.21.0 pyogrio-0.13.0 pyproj-3.8.0 pytest-9.1.1 python-dateutil-2.9.0.post0 python-dotenv-1.2.4 python-multipart-0.0.32 pyyaml-6.0.3 shapely-2.2.0 six-1.17.0 starlette-1.7.0 typing-extensions-4.16.0 typing-inspection-0.4.4 tzdata-2026.5 uvicorn-0.54.0 watchfiles-1.3.0 websockets-17.2
+
+[notice] A new release of pip is available: 24.2 -> 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>pip show fastapi geopandas shapely pyproj
+Name: fastapi
+Version: 0.142.2
+Summary: FastAPI framework, high performance, easy to learn, fast to code, ready for production
+Home-page: https://github.com/fastapi/fastapi
+Author:
+Author-email: =?utf-8?q?Sebasti=C3=A1n_Ram=C3=ADrez?= <tiangolo@gmail.com>
+License:
+Location: C:\Users\gopal\Geospatial-File-Measurement-API\.venv\Lib\site-packages
+Requires: annotated-doc, opentelemetry-api, pydantic, starlette, typing-extensions, typing-inspection
+Required-by:
+---
+Name: geopandas
+Version: 1.2.0
+Summary: Geographic pandas extensions
+Home-page:
+Author:
+Author-email: Kelsey Jordahl <kjordahl@alum.mit.edu>
+License:
+Location: C:\Users\gopal\Geospatial-File-Measurement-API\.venv\Lib\site-packages
+Requires: numpy, packaging, pandas, pyogrio, pyproj, shapely
+Required-by:
+---
+Name: shapely
+Version: 2.2.0
+Summary: Manipulation and analysis of geometric objects
+Home-page:
+Author: Sean Gillies
+Author-email:
+License:
+Location: C:\Users\gopal\Geospatial-File-Measurement-API\.venv\Lib\site-packages
+Requires: numpy
+Required-by: geopandas
+---
+Name: pyproj
+Version: 3.8.0
+Summary: Python interface to PROJ (cartographic projections and coordinate transformations library)
+Home-page: https://github.com/pyproj4/pyproj
+Author:
+Author-email: Jeff Whitaker <jeffrey.s.whitaker@noaa.gov>
+License:
+Location: C:\Users\gopal\Geospatial-File-Measurement-API\.venv\Lib\site-packages
+Requires: certifi
+Required-by: geopandas
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>pytest
+================================================= test session starts =================================================
+platform win32 -- Python 3.12.6, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\gopal\Geospatial-File-Measurement-API
+plugins: anyio-4.15.1
+collected 0 items / 3 errors
+
+======================================================= ERRORS ========================================================
+_________________________________________ ERROR collecting tests/test_crs.py __________________________________________
+ImportError while importing test module 'C:\Users\gopal\Geospatial-File-Measurement-API\tests\test_crs.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_crs.py:7: in <module>
+    from app.services.crs import (
+E   ModuleNotFoundError: No module named 'app'
+________________________________________ ERROR collecting tests/test_files.py _________________________________________
+ImportError while importing test module 'C:\Users\gopal\Geospatial-File-Measurement-API\tests\test_files.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_files.py:9: in <module>
+    from app.main import app
+E   ModuleNotFoundError: No module named 'app'
+_____________________________________ ERROR collecting tests/test_measurements.py _____________________________________
+ImportError while importing test module 'C:\Users\gopal\Geospatial-File-Measurement-API\tests\test_measurements.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_measurements.py:5: in <module>
+    from app.services.measurement import calculate_measurement
+E   ModuleNotFoundError: No module named 'app'
+================================================== warnings summary ===================================================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\gopal\Geospatial-File-Measurement-API\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================================== short test summary info ===============================================
+ERROR tests/test_crs.py
+ERROR tests/test_files.py
+ERROR tests/test_measurements.py
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+============================================ 1 warning, 3 errors in 4.50s =============================================
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>New-Item app\__init__.py -ItemType File
+'New-Item' is not recognized as an internal or external command,
+operable program or batch file.
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>New-Item app\api\__init__.py -ItemType File
+'New-Item' is not recognized as an internal or external command,
+operable program or batch file.
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>New-Item app\services\__init__.py -ItemType File
+'New-Item' is not recognized as an internal or external command,
+operable program or batch file.
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>New-Item tests\__init__.py -ItemType File
+'New-Item' is not recognized as an internal or external command,
+operable program or batch file.
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>dir
+ Volume in drive C is OS
+ Volume Serial Number is 0EBF-E502
+
+ Directory of C:\Users\gopal\Geospatial-File-Measurement-API
+
+07-10-2026  17:08    <DIR>          .
+07-10-2026  16:02    <DIR>          ..
+07-10-2026  16:51                90 .gitignore
+07-10-2026  17:08    <DIR>          .pytest_cache
+07-10-2026  17:01    <DIR>          .venv
+07-10-2026  16:26    <DIR>          app
+07-10-2026  16:08    <DIR>          docs
+07-10-2026  16:58             8,072 README.md
+07-10-2026  17:00                87 requirements.txt
+07-10-2026  17:08    <DIR>          tests
+               3 File(s)          8,249 bytes
+               7 Dir(s)   9,693,564,928 bytes free
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>dir app
+ Volume in drive C is OS
+ Volume Serial Number is 0EBF-E502
+
+ Directory of C:\Users\gopal\Geospatial-File-Measurement-API\app
+
+07-10-2026  16:26    <DIR>          .
+07-10-2026  17:08    <DIR>          ..
+07-10-2026  16:25    <DIR>          api
+07-10-2026  16:37               365 main.py
+07-10-2026  16:24    <DIR>          services
+               1 File(s)            365 bytes
+               4 Dir(s)   9,679,884,288 bytes free
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>type nul > app\__init__.py
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>type nul > app\api\__init__.py
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>type nul > app\services\__init__.py
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>python -m pytest
+================================================= test session starts =================================================
+platform win32 -- Python 3.12.6, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\gopal\Geospatial-File-Measurement-API
+plugins: anyio-4.15.1
+collected 16 items
+
+tests\test_crs.py .....                                                                                          [ 31%]
+tests\test_files.py .......                                                                                      [ 75%]
+tests\test_measurements.py ...F                                                                                  [100%]
+
+====================================================== FAILURES =======================================================
+___________________________________ test_unsupported_geometry_is_handled_gracefully ___________________________________
+
+    def test_unsupported_geometry_is_handled_gracefully():
+        geometry = Point(10, 20).buffer(5).boundary
+
+        result = calculate_measurement(geometry)
+
+>       assert result["measurement_type"] is None
+E       AssertionError: assert 'length' is None
+
+tests\test_measurements.py:55: AssertionError
+================================================== warnings summary ===================================================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\gopal\Geospatial-File-Measurement-API\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================================== short test summary info ===============================================
+FAILED tests/test_measurements.py::test_unsupported_geometry_is_handled_gracefully - AssertionError: assert 'length' is None
+======================================= 1 failed, 15 passed, 1 warning in 3.16s =======================================
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>python -m pytest
+================================================= test session starts =================================================
+platform win32 -- Python 3.12.6, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\gopal\Geospatial-File-Measurement-API
+plugins: anyio-4.15.1
+collected 16 items
+
+tests\test_crs.py .....                                                                                          [ 31%]
+tests\test_files.py .......                                                                                      [ 75%]
+tests\test_measurements.py ....                                                                                  [100%]
+
+================================================== warnings summary ===================================================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\gopal\Geospatial-File-Measurement-API\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================================ 16 passed, 1 warning in 1.93s ============================================
+
+(.venv) C:\Users\gopal\Geospatial-File-Measurement-API>uvicorn app.main:app --reload
+INFO:     Will watch for changes in these directories: ['C:\\Users\\gopal\\Geospatial-File-Measurement-API']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [22360] using WatchFiles
+INFO:     Started server process [29940]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:52159 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52159 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53720 - "POST /api/files/ HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54309 - "GET /api/files/c944d9a1-0a84-4122-b4ea-c0bcbb9f6f04/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52015 - "GET /api/files/c944d9a1-0a84-4122-b4ea-c0bcbb9f6f04/measurements/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53230 - "POST /api/files/ HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51878 - "GET /api/files/a73787ba-bde0-4b48-bc2c-032ad9c6562a/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63382 - "GET /api/files/a73787ba-bde0-4b48-bc2c-032ad9c6562a/measurements/ HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29940]
+INFO:     Stopping reloader process [22360]
