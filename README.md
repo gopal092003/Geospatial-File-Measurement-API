@@ -28,6 +28,7 @@ The API supports KML files and ZIP archives containing a Shapefile.
 * Store processed results in memory using a generated file ID.
 * Provide interactive API documentation through FastAPI Swagger UI.
 * Include automated unit and API tests.
+* Include a development and verification log documenting the actual setup, debugging, testing, and API verification process.
 
 ## Tech Stack
 
@@ -64,14 +65,37 @@ geospatial-measurement-api/
 │   ├── test_measurements.py
 │   └── test_crs.py
 │
-├── sample_data/
-│   ├── sample.kml
-│   └── sample_shapefile.zip
+├── docs/
+│   └── logs.txt
 │
 ├── requirements.txt
 ├── README.md
 └── .gitignore
 ```
+
+### Documentation Logs
+
+The `docs/logs.txt` file contains the original Command Prompt logs captured during development and verification.
+
+The log includes:
+
+* Virtual environment creation
+* Dependency installation
+* Installed package versions
+* Initial test failures
+* Debugging of Python package imports
+* Creation of package initialization files
+* Initial failing test
+* Test correction
+* Final successful test run
+* FastAPI/Uvicorn startup
+* Swagger and OpenAPI verification
+* Manual KML API testing
+* Manual Shapefile ZIP API testing
+* API responses and HTTP status codes
+* Application shutdown
+
+The logs are preserved in their original form to provide an execution history of the project rather than a reconstructed summary.
 
 ## Setup
 
@@ -153,7 +177,7 @@ Example using cURL:
 
 ```bash
 curl -X POST \
-  -F "file=@sample_data/sample.kml" \
+  -F "file=@sample.kml" \
   http://127.0.0.1:8000/api/files/
 ```
 
@@ -379,19 +403,27 @@ The application therefore:
 5. Transforms the geometries into the projected CRS.
 6. Calculates measurements using the projected geometries.
 
-The original geometry and original CRS are retained for the API response, while the transformed geometry is used internally for measurement calculations.
+The original geometry and CRS are retained in the processed result, while the transformed geometry is used internally for measurement calculations.
 
 For example:
 
 ```text
 Input CRS
+
 EPSG:4326
+
    ↓
+
 Estimate suitable UTM CRS
+
    ↓
+
 Projected CRS
+
 EPSG:32643
+
    ↓
+
 Calculate area/length in meters
 ```
 
@@ -538,6 +570,40 @@ GET /api/files/{id}/measurements/
 
 Both file formats therefore work successfully through the complete API flow.
 
+### Development and Verification Logs
+
+The repository includes `docs/logs.txt`, which contains the original Command Prompt output from the development and verification process.
+
+The log documents the actual sequence of:
+
+```text
+Environment Setup
+      ↓
+Dependency Installation
+      ↓
+Initial Test Failures
+      ↓
+Debugging and Fixes
+      ↓
+Successful Automated Tests
+      ↓
+Application Startup
+      ↓
+Swagger/OpenAPI Verification
+      ↓
+KML API Testing
+      ↓
+Shapefile ZIP API Testing
+```
+
+The final recorded automated test result was:
+
+```text
+16 passed, 1 warning
+```
+
+The warning was a Starlette deprecation warning related to the installed HTTPX/TestClient combination and did not prevent the test suite from passing.
+
 ## Learning
 
 This project provided practical experience with:
@@ -552,6 +618,8 @@ This project provided practical experience with:
 * Designing separation between HTTP/API handling and business logic.
 * Writing automated tests for geospatial processing.
 * Testing real KML and Shapefile ZIP files through an API.
+* Debugging package/import issues in a Python project.
+* Verifying API behavior through Swagger UI.
 
 ## Future Scope
 
@@ -577,4 +645,4 @@ Potential improvements include:
 | `POST` | `/api/files/`                   | Upload and process a KML or Shapefile ZIP |
 | `GET`  | `/api/files/{id}/`              | Retrieve processed file information       |
 | `GET`  | `/api/files/{id}/measurements/` | Retrieve feature measurements             |
-| `GET`  | `/docs`                         | Open interactive Swa                      |
+| `GET`  | `/docs`                         | Open interactive Swagger documentation    |
